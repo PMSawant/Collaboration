@@ -8,12 +8,12 @@
 <body>
 
 	
-	<br><br><br><h2>Please login with your credentials</h2>
+	<br><br><br><h2 align="center">Please login with your credentials</h2>
 	<br> ${message}
 	<c:url var="action" value="/login"></c:url>
 
 	<form:form action="${action}" method="post">
-		<table>
+		<table align="center">
 			<tr>
 				<td>User Name:</td>
 				<td><input type="text" name="name"></td>

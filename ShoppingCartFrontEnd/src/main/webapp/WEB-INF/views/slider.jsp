@@ -13,12 +13,8 @@
       margin: auto;
       min-height:200px;
   }
-
-
 </style>
 <body>
-
-
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -31,6 +27,8 @@
 			<div class="item active">
 				<img src="resources/images/1.jpg" alt="Image">
 				<div class="carousel-caption"></div>
+				
+				
 			</div>
 
 			<div class="item">

@@ -3,6 +3,8 @@ package com.niit.shoppingcartfrontend.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ import com.niit.shoppingcart.model.User;
 
 @Controller
 public class UserController {
+	Logger log = LoggerFactory.getLogger(UserController.class);
 
 @Autowired
 Category category;
@@ -32,6 +35,8 @@ UserDAO userDAO;
 @RequestMapping("/login")
 public ModelAndView login(@RequestParam(value = "name") String userID,
 		@RequestParam(value = "password") String password, HttpSession session) {
+	log.debug("Starting of the method login");
+	log.info("userID is {}  password is {}", userID, password);
 	ModelAndView mv = new ModelAndView("/index");
 	boolean isValidUser = userDAO.isValidUser( userID, password);
 
@@ -48,7 +53,7 @@ public ModelAndView login(@RequestParam(value = "name") String userID,
 	} else {
 		mv.addObject("invalidCredentials", "true");
 		mv.addObject("errorMessage", "Invalid Credentials");
-	}
+	}log.debug("Ending of the method login");
 	return mv;
 }
 

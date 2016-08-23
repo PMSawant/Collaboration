@@ -1,73 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <head>
 <title>Shopping Cart</title>
 </head>
 <style>
-body {
-	font: 400 15px/1.8 Lato, sans-serif;
-	color: #777;
-}
-h3, h4 {
-	margin: 10px 0 30px 0;
-	letter-spacing: 10px;
-	font-size: 20px;
-	color: #111;
-}
-.container {
-	padding: 80px 120px;
-}
-.person {
-	border: 10px solid transparent;
-	margin-bottom: 25px;
-	width: 80%;
-	height: 80%;
-	opacity: 0.7;
-}
-.person:hover {
-	border-color: #f1f1f1;
-}
-.nav-tabs li a {
-	color: #777;
-}
+/* Add a dark background color with a little bit see-through */ 
 .navbar {
-	font-family: Montserrat, sans-serif;
-	margin-bottom: 0;
-	background-color: #2d2d30;
-	border: 0;
-	font-size: 11px !important;
-	letter-spacing: 4px;
-	opacity: 0.9;
-}
-.navbar li a, .navbar .navbar-brand {
-	color: #d5d5d5 !important;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
 }
 
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: black !important;
+}
+
+/* On hover, the links will turn white */
 .navbar-nav li a:hover {
-	color: #fff !important;
+    color: #fff !important;
 }
+
+/* The active link */
 .navbar-nav li.active a {
-	color: #fff !important;
-	background-color: #29292c !important;
+    color: #fff !important;
+    background-color:#29292c !important;
 }
+
+/* Remove border color from the collapsible button */
 .navbar-default .navbar-toggle {
-	border-color: transparent;
+    border-color: transparent;
 }
-.form-control {
-	border-radius: 0;
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
 }
-textarea {
-	resize: none;
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
 }
-p{
-color:red;
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
 }
 </style>
 </head>
@@ -77,8 +66,10 @@ color:red;
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-				</button>
+					 <span class="icon-bar"></span>
+       				 <span class="icon-bar"></span>
+        			<span class="icon-bar"></span> 
+      			</button>
 				<a class="navbar-brand">TV Store</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -86,18 +77,27 @@ color:red;
 					<li><a href="index">HOME</a></li>
 					<c:choose>
 						<c:when test="${empty loggedInUser}">
-							<li><a href="loginHere">Login</a></li>
+							<li><a href="loginHere" > Login</a></li>
 							<li><a href="registerHere">Register</a></li>
+							<li><a href="contact">Contact US</a></li>
 						</c:when>
-						<c:when test="${not empty loggedInUser}">
-					Welcome ${loggedInUser}
-				<li><a href="logout">Logout</a></li>
+						<c:when test="${not empty loggedInUser}">Welcome ${loggedInUser}
+						<li><a href="logout">Logout</a></li>
 						</c:when>
 					</c:choose>
+					<c:if test="${isAdmin==false}" >
+						<li><a href="myCart"> My Cart </a> ${cartSize}</li>
+					</c:if>	
 				</ul>
 			</div>
 		</div>
 	</nav>
+
+	<div>
+		<c:if test="${loggedOut==true}">
+			<h2>${logoutMessage}</h2>>
+		</c:if>
+	</div>	
 	
 	<div id="registerHere">
 		<c:if test="${isUserClickedRegisterHere==true}">
@@ -116,6 +116,9 @@ color:red;
 		<c:if test="${isAdmin==true}">
 			<%@ include file="admin.jsp"%>
 		</c:if>
+		<c:if test="${isAdmin==false}" >
+			<%@ include file="User.jsp"%>
+		</c:if>
 
 		<div id="categories">
 			<c:if test="${isAdminClickedCategories==true}">
@@ -123,22 +126,49 @@ color:red;
 				<%@ include file="category.jsp"%>
 			</c:if>
 		</div>
-
-		<div id="products">
-			<c:if test="${isAdminClickedProducts==true}">
-				<%@ include file="admin.jsp"%>
-				<%@ include file="product.jsp"%>
-			</c:if>
-		</div>
-
-		<div id="suppliers">
-			<c:if test="${isAdminClickedSuppliers==true}">
-				<%@ include file="admin.jsp"%>
-				<%@ include file="supplier.jsp"%>
-			</c:if>
-		</div>
 	</div>
-<%@include file="slider.jsp" %>	
+	<div id="products">
+		<c:if test="${isAdminClickedProducts==true}">
+			<%@ include file="admin.jsp"%>
+			<%@ include file="product.jsp"%>
+		</c:if>
+	</div>
+
+	<div id="suppliers">
+		<c:if test="${isAdminClickedSuppliers==true}">
+			<%@ include file="admin.jsp"%>
+			<%@ include file="supplier.jsp"%>
+		</c:if>
+	</div>
+
+	
+<div class="container" id ="displayCart">
+	<c:if test="${displayCart==true}">
+	       
+<br><br><br><table>
+				<tr>
+					<th align="left" width="80">Cart ID</th>
+					<th align="left" width="120">Product Name</th>
+					<th align="left" width="100">Quantity</th>
+					<th align="left" width="80">Price</th>
+					<th align="left" width="60">Delete</th>
+
+				</tr>
+				<c:forEach items="${cartList}" var="cart">
+				<tr>
+					<td align="left" >${cart.id}</td>
+					<td align="left" >${cart.productName}</td>
+					<td align="left" >${cart.quantity}</td>
+					<td align="left" >${cart.price}</td>
+					<td align="left" ><a href="<c:url value='/cart/delete/${cart.id}'  />">Delete</a></td>
+					<td align="left" ><a href="<c:url value='pay/${cart.id}' />"> Proceed</a> </td>
+				</tr>
+				</c:forEach>
+			</table>
+			
+		</c:if>
+	</div>	
+
+<%@include file="slider.jsp"%>
 </body>
 </html>
-

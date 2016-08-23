@@ -15,7 +15,7 @@
 	<form:form action="${addAction}" commandName="category">
 		<table align="center">
 			<tr>
-				<td align="center">Category ID<form:label path="id" text="ID" >
+				<td align="center"><form:label path="id" text="ID" ><spring:message text=" Category ID" />
 					</form:label></td>
 			
 				<c:choose>
@@ -30,12 +30,12 @@
 				</c:choose>
 			<tr>
 			<form:input path="id" hidden="true"  />
-				<td>Category Name<form:label path="name" text="Name">
+				<td><form:label path="name" text="Name"><spring:message text=" Category Name" />
 					</form:label></td>
 				<td><form:input path="name" required="true" /></td>
 			</tr>
 			<tr>
-				<td>Category Desc<form:label path="desc" text="Description">
+				<td><form:label path="desc" text="Description"><spring:message text=" Category Desc" />
 					</form:label></td>
 				<td><form:input path="desc" required="true" /></td>
 			</tr>

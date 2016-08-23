@@ -11,7 +11,6 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="com.niit.*"/>
-<!-- <mvc:resources mapping="/resources/**" location="/resources/"/> -->
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -29,4 +28,6 @@
 		<property name="username" value="sa"></property>
 		<property name="password" value="sa"></property>
 	</bean>
+	<mvc:annotation-driven/>
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 </beans>

@@ -2,6 +2,8 @@ package com.niit.shoppingcartfrontend.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +18,8 @@ import com.niit.shoppingcart.model.User;
 
 @Controller
 public class HomeController {
+	
+	Logger log = LoggerFactory.getLogger(HomeController.class);
 	
 @Autowired
 Category category;
@@ -37,22 +41,21 @@ public String ind()
 	
 @RequestMapping("/")
 public ModelAndView onload (HttpSession session) {
+	log.debug("Starting of the method onLoad");
 	ModelAndView mv = new ModelAndView("/index");
 	session.setAttribute("category",category);
 	session.setAttribute("categoryList", categoryDAO.list());
+	log.debug("Ending of the method onLoad");
 	return mv;
 	 }
 	
 
 	@RequestMapping(value = "user/register", method = RequestMethod.POST)
 	public ModelAndView registerUser(@ModelAttribute User user) {
+		userDAO.saveOrUpdate(user);
 		ModelAndView mv  = new ModelAndView("/index");
-		if(userDAO.get(user.getId())==null){
-			userDAO.saveOrUpdate(user);
-		}else {
-			mv.addObject("msg","User exist with this id");
-		}
 		mv.addObject("successMessage", "You are successfully register");
+		
 		return mv; 
 	}
 
@@ -70,6 +73,11 @@ public ModelAndView onload (HttpSession session) {
 		mv.addObject("user", new User());
 		mv.addObject("isUserClickedLoginHere", "true");
 		return mv;
+	}
+	@RequestMapping("/contact")
+	public String contact()
+	{
+		return ("contact");
 	}
 
 }

@@ -53,7 +53,6 @@ public String listProducts(Model model) {
 
 @RequestMapping(value = "/product/add", method = RequestMethod.POST)
 public String addProduct(@ModelAttribute("product") Product product) {
-
 	productDAO.saveOrUpdate(product);
 	return "redirect:/manageProducts";
 	}

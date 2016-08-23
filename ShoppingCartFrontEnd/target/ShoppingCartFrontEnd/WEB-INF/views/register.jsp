@@ -7,9 +7,9 @@
 <title>Registration Page</title>
 </head>
 <body>
-	<br><br><h2>Please fill the details</h2>
+	<br><br><h2 align="center">Please fill the details</h2>
 <form:form action="user/register" method="post" commandName="user">
-<table>
+<table align="center">
 	<tr>
 		<td><form:label path="id">User ID</form:label><br>
 		<form:input path="id" required="true" title="id should not be empty" /></td>
@@ -37,7 +37,7 @@
 	
 	<tr>
 	<td><form:label path="password">Password</form:label><br>
-	<form:input type="password" path="password" required="true" pattern=".{4,15}" title="password should not be empty "/></td>
+	<form:input type="password" path="password" required="true" title="password should not be empty "/></td>
 	</tr>
 
 	<tr>
