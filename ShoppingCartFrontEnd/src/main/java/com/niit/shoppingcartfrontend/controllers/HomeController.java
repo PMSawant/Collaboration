@@ -12,15 +12,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.User;
 
 @Controller
 public class HomeController {
 	
 	Logger log = LoggerFactory.getLogger(HomeController.class);
-	
+
+@Autowired
+Supplier supplier;
+
+@Autowired
+SupplierDAO supplierDAO;
+
 @Autowired
 Category category;
 
@@ -45,6 +53,8 @@ public ModelAndView onload (HttpSession session) {
 	ModelAndView mv = new ModelAndView("/index");
 	session.setAttribute("category",category);
 	session.setAttribute("categoryList", categoryDAO.list());
+	session.setAttribute("supplier",supplier);
+	session.setAttribute("supplierlist", supplierDAO.list());
 	log.debug("Ending of the method onLoad");
 	return mv;
 	 }
@@ -75,9 +85,10 @@ public ModelAndView onload (HttpSession session) {
 		return mv;
 	}
 	@RequestMapping("/contact")
-	public String contact()
-	{
-		return ("contact");
+	public ModelAndView onload1 (HttpSession session) {
+		ModelAndView mv = new ModelAndView("/index");
+		mv.addObject("isUserClickedContact", "true");
+		return mv;
 	}
 
 }

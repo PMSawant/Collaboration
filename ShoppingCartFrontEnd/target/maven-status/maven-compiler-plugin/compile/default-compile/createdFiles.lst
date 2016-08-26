@@ -1,4 +1,5 @@
 com\niit\shoppingcartfrontend\controllers\AdminController.class
+com\niit\shoppingcartfrontend\controllers\FIleUploadController.class
 com\niit\shoppingcartfrontend\controllers\CategoryController.class
 com\niit\shoppingcartfrontend\controllers\UserController.class
 com\niit\shoppingcartfrontend\controllers\HomeController.class

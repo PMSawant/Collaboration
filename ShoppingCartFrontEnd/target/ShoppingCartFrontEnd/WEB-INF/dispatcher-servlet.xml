@@ -28,6 +28,11 @@
 		<property name="username" value="sa"></property>
 		<property name="password" value="sa"></property>
 	</bean>
-	<mvc:annotation-driven/>
+	 <mvc:annotation-driven/> 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+ 
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> 
+
+	
 </beans>

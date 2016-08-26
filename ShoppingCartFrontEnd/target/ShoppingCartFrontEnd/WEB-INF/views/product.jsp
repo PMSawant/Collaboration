@@ -69,10 +69,26 @@
 			</tr>
 		</table>
 	</form:form>
+
+<br>
+	<form:form method="POST" action="uploadFile" enctype="multipart/form-data">
+		<table align="center">
+			<tr>
+				<td>File to upload: <input type="file" name="file">
+				</td>
+			</tr>
+			<tr>
+				<td>Name: <input type="text" name="name">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Upload"></td>
+			</tr>
+		</table>
+	</form:form>
+
+
 	<br>
-
-
-
 	<h3 align="center">Product List</h3>
 	<c:if test="${!empty productList}">
 		<table class="tg" align="center">

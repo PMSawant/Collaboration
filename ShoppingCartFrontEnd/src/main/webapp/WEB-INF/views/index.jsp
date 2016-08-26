@@ -93,9 +93,14 @@
 		</div>
 	</nav>
 
+<div id="contact">
+	<c:if test="${isUserClickedContact==true}">
+	<%@include file="contact.jsp" %>
+	</c:if> 
+</div>
 	<div>
 		<c:if test="${loggedOut==true}">
-			<h2>${logoutMessage}</h2>>
+			<br><br><h2>${logoutMessage}</h2>
 		</c:if>
 	</div>	
 	
@@ -116,16 +121,17 @@
 		<c:if test="${isAdmin==true}">
 			<%@ include file="admin.jsp"%>
 		</c:if>
+		</div>
+		<div id="User">
 		<c:if test="${isAdmin==false}" >
 			<%@ include file="User.jsp"%>
 		</c:if>
-
+	</div>
 		<div id="categories">
 			<c:if test="${isAdminClickedCategories==true}">
 				<%@ include file="admin.jsp"%>
 				<%@ include file="category.jsp"%>
-			</c:if>
-		</div>
+	</c:if>
 	</div>
 	<div id="products">
 		<c:if test="${isAdminClickedProducts==true}">
@@ -144,7 +150,7 @@
 	
 <div class="container" id ="displayCart">
 	<c:if test="${displayCart==true}">
-	       
+   
 <br><br><br><table>
 				<tr>
 					<th align="left" width="80">Cart ID</th>

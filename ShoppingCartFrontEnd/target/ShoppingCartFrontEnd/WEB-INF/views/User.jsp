@@ -6,16 +6,42 @@
 <title>User Page</title>
 </head>
 <body>
-		<div class="container">
-			<table align="center">
+		
+	<ul id="menu">
+		<c:forEach items="${categoryList}" var="category">
+			<li><a href="${category.name}">${category.name}</a>
+				<ul>
+					<c:forEach items="${supplierList}" var="product">
+
+						<li><a href="${product.name}">${product.name}</a>
+
+					</c:forEach>
+
+				</ul></li>
+		</c:forEach> 
+
+	</ul>
+
+	<br><br><br>
+	<div>
+			<table>
 				<tr>
-					<th align="left" width="120">Product ID</th>
-					<th align="left" width="120">Product Name</th>
-					<th align="left" width="80">Price</th>
-					<th align="left" width="150">Product Category</th>
-					<th align="left" width="150">Product Supplier</th>					
+					<th align="left" width="100">Product ID</th>
+					<th align="left" width="100">Product Name</th>
+					<th align="left" width="100">Price</th>
+					<th align="left" width="100">Product Category</th>
+					<th align="left" width="100">Product Supplier</th>
+					
 				</tr>
-				
+				<c:forEach items="${productList}" var="product">
+				<tr>
+					<td>${selectedProduct.id}</td>
+					<td>${selectedProduct.name}</td>
+					<td>${selectedProduct.price}</td>
+					<td>${selectedProduct.category_id}</td>
+					<td>${selectedProduct.supplier_id}</td>
+					</tr>
+					</c:forEach>
 			</table>
 	</div>
 

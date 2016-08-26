@@ -2,19 +2,14 @@
 <html>
 <head>
 <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-<div style='overflow: hidden; height: 250px; width: 300px;'>
-	<div id='gmap_canvas' style='height: 250px; width: 300px;'></div>
-	<div><small><a href="http://www.embedgooglemaps.com">Generate your Google map here, quick and easy!</a></small></div>
-	<div><small><a href="http://freedirectorysubmissionsites.com/">overview of all web directories 2016</a></small>
-	</div>
+ 
 <style>
 #gmap_canvas img {
 	max-width: none !important;
 	background: none !important
 }
 </style>
-</div>
-<script type='text/javascript'>
+<script type='text/javascript' >
 	function init_map() {
 		var myOptions = {
 			zoom : 10,
@@ -41,20 +36,20 @@
 <title>Google Map</title>
 </head>
 <body>
+<br><br><br>
+<div style='overflow: hidden; height: 250px; width: 300px;'>
+	<div id='gmap_canvas' style='height: 250px; width: 300px;'></div>
+	<div><small><a href="http://www.embedgooglemaps.com">Generate your Google map here, quick and easy!</a></small></div>
+	<div><small><a href="http://freedirectorysubmissionsites.com/">overview of all web directories 2016</a></small>
+	</div> </div>
+<div class="row">
+    <div class="col-md-4">
+      <p>We are Here</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Pune, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 00000000</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+    </div>
+    </div>
 
-<br><br><table>
-	<tr>
-	<td>Enter Email ID</td>
-	<td><input type="text" name="email"></td>
-	</tr>
-
-	<tr>
-	<td> Mention Comments</td>
-	<td><input type="text" name="comments"></td>
-	</tr>
-	<tr>
-		<td><input type="submit" value="send"></td>
-	</tr>
-</table>
 </body>
 </html>

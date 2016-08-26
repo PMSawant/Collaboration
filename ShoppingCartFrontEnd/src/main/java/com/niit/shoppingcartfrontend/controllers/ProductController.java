@@ -63,7 +63,6 @@ public String removeProduct(@PathVariable("id") String id, ModelMap model) {
 		return "redirect:/manageProducts";
 	}
 
-
 @RequestMapping("product/edit/{id}")
 public String editProduct(@PathVariable("id") String id, Model model) {
 	model.addAttribute("product", this.productDAO.get(id));
