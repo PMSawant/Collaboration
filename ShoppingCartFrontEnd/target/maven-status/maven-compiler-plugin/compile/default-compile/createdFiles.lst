@@ -1,0 +1,9 @@
+com\niit\shoppingcartfrontend\controllers\AdminController.class
+com\niit\shoppingcartfrontend\controllers\FIleUploadController.class
+com\niit\shoppingcartfrontend\controllers\CategoryController.class
+com\niit\shoppingcartfrontend\controllers\UserController.class
+com\niit\shoppingcartfrontend\controllers\HomeController.class
+com\niit\shoppingcartfrontend\controllers\CartController.class
+com\niit\shoppingcartfrontend\controllers\SupplierController.class
+com\niit\shoppingcartfrontend\handler\RegistrationHandler.class
+com\niit\shoppingcartfrontend\controllers\ProductController.class
