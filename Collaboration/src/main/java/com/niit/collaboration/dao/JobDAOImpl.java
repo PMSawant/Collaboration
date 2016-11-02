@@ -2,11 +2,13 @@ package com.niit.collaboration.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.collaboration.model.Job;
 
@@ -44,4 +46,12 @@ public class JobDAOImpl implements JobDAO {
 		return null;
 	}
 
+	@Transactional
+	public List<Job> list() {
+		@SuppressWarnings("unchecked")
+		List<Job> list = (List<Job>) sessionFactory.getCurrentSession().createCriteria(Job.class)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+
+		return list;
+	}
 }

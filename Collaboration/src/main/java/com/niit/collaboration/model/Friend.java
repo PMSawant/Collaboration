@@ -3,12 +3,11 @@ package com.niit.collaboration.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="FRIEND")
+
 @Component 
 public class Friend {
 
