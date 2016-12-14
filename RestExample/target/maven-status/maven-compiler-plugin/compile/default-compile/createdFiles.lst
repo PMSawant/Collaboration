@@ -1,0 +1,15 @@
+com\RestExample\services\PersonService.class
+com\RestExample\controller\BlogController.class
+com\RestExample\controller\PersonController.class
+com\RestExample\dao\BlogDao.class
+com\RestExample\services\BlogService.class
+com\RestExample\dao\PersonDao.class
+com\RestExample\model\Person.class
+com\RestExample\dao\BlogDaoImpl.class
+com\RestExample\configuration\WebAppConfig.class
+com\RestExample\model\Blog.class
+com\RestExample\services\BlogServiceImpl.class
+com\RestExample\configuration\DBConfig.class
+com\RestExample\dao\PersonDaoImpl.class
+com\RestExample\configuration\WebAppInitializer.class
+com\RestExample\services\PersonServiceImpl.class
