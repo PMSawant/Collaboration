@@ -40,7 +40,7 @@ public class BlogServiceImpl implements BlogService {
 
 	public Blog updateBlog(int id, Blog blog) {
 		// TODO Auto-generated method stub
-		return blogDao.updateBlog(0, blog);
+		return blogDao.updateBlog(id, blog);
 	}
 
 	public void deletBlog(int id) {

@@ -3,6 +3,8 @@ app.config(function($routeProvider){
 	console.log('Entering in configuration')
 	
 	$routeProvider
+	.when('/',{templateUrl:'pages/index.html'})
+})
 	.when('/createPerson',{
 		controller:'PersonController',
 		templateUrl:'pages/createPerson.html'
@@ -11,5 +13,3 @@ app.config(function($routeProvider){
 		controller:'PersonController',
 		templateUrl:'pages/listOfPersons.html'
 	})
-	.when('/',{templateUrl:'pages/home.html'})
-})

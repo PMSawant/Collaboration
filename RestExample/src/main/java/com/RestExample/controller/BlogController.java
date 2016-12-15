@@ -39,7 +39,7 @@ public class BlogController {
 	}
 	
 	@RequestMapping(value="/blog/{id}",method=RequestMethod.GET)
-	public ResponseEntity<Blog> getBLogById(@PathVariable(value="id") int id){
+	public ResponseEntity<Blog> getBlogById(@PathVariable(value="id") int id){
 		Blog blog=blogService.getBlogById(id);
 		if(blog==null)
 			return new ResponseEntity<Blog>(HttpStatus.NOT_FOUND);
@@ -72,9 +72,10 @@ public class BlogController {
 		Blog updatedBlog=blogService.updateBlog(id, blog);
 		if(blog==null)
 			return new ResponseEntity<Blog>(HttpStatus.NOT_FOUND);
-		return new ResponseEntity<Blog>(updatedBlog,HttpStatus.OK);
-		
+		return new ResponseEntity<Blog>(updatedBlog,HttpStatus.OK);	
 	}
+	
+	
 	@RequestMapping(value={"/blog/{id}"},method={RequestMethod.DELETE})
 	public ResponseEntity<Void> deleteBlog(@PathVariable int id){
 

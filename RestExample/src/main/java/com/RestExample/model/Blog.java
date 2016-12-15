@@ -15,6 +15,7 @@ public class Blog {
 	private int blogId;
 	private String blogName;
 	private String blogDescription;
+	
 	public int getBlogId() {
 		return blogId;
 	}

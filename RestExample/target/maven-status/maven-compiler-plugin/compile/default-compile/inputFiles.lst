@@ -1,5 +1,6 @@
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\configuration\DBConfig.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\controller\BlogController.java
+C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\dao\ForumDaoImpl.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\services\PersonService.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\model\Blog.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\controller\PersonController.java
@@ -8,8 +9,13 @@ C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\dao\P
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\services\BlogService.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\dao\BlogDao.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\model\Person.java
+C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\model\Forum.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\services\BlogServiceImpl.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\configuration\WebAppConfig.java
+C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\controller\ForumController.java
+C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\services\ForumServiceImpl.java
+C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\dao\ForumDao.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\dao\BlogDaoImpl.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\configuration\WebAppInitializer.java
 C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\dao\PersonDaoImpl.java
+C:\Users\Owner\Desktop\project 2\RestExample\src\main\java\com\RestExample\services\ForumService.java
