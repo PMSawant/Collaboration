@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.RestExample.model.Blog;
 import com.RestExample.model.Forum;
+import com.RestExample.model.Friend;
 import com.RestExample.model.Person;
 
 
@@ -28,7 +29,7 @@ public class DBConfig {
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
-		return lsf.addAnnotatedClass(Forum.class).addAnnotatedClass(Blog.class).addAnnotatedClass(Person.class).buildSessionFactory();
+		return lsf.addAnnotatedClass(Friend.class).addAnnotatedClass(Forum.class).addAnnotatedClass(Blog.class).addAnnotatedClass(Person.class).buildSessionFactory();
 	}
 	@Bean
 	public DataSource getDataSource() {

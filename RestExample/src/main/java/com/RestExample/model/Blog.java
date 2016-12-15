@@ -15,7 +15,15 @@ public class Blog {
 	private int blogId;
 	private String blogName;
 	private String blogDescription;
+	private boolean status;
 	
+	
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 	public int getBlogId() {
 		return blogId;
 	}
