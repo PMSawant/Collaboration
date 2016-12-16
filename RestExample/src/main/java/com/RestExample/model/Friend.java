@@ -42,7 +42,5 @@ public class Friend {
 	public void setFriendMail(String friendMail) {
 		this.friendMail = friendMail;
 	}
-	
-	
 
 }

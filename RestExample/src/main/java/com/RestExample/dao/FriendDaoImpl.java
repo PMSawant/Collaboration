@@ -32,7 +32,7 @@ public class FriendDaoImpl implements FriendDao {
 	public List<Friend> getAllFriends() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from friend");
+		Query query=session.createQuery("from Friend");
 		List<Friend> friends=query.list();
 		session.close();
 		return friends;
@@ -75,7 +75,7 @@ public class FriendDaoImpl implements FriendDao {
 		return updateFriend;
 	}
 
-	@Override
+	@Transactional
 	public void deletFriend(int id) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
